@@ -48,6 +48,16 @@ def index():
         "index.html", message=message, status_class=status_class
     )
 
+@app.route("/hello")
+def hello():
+    """Menampilkan pesan hello."""
+    return "Hello dari branch fitur-route!"
+
+@app.route("/about")
+def about():
+    """Menampilkan informasi aplikasi."""
+    return "Ini adalah aplikasi DevSecOps."
+
 if __name__ == "__main__":
     init_db()
     app.run(host="0.0.0.0", port=5000)  # nosemgrep
